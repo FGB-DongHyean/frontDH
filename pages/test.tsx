@@ -122,31 +122,11 @@ export default function Test() {
       ],
     },
   ];
-
-  /*
-  
-  return (
-    <div className={styles.container}>
-      <div className={styles.left}>
-        <div className={styles.logo}>
-          <img src={logo.src} alt="logo" className={styles.image} />
-        </div>
-        <div className={styles.menu}>
-          <Sidebar menuItems={menuItems} />
-        </div>
-      </div>
-      <div className={styles.right}>
-        <div className={styles.title}>
-          <p>title</p>
-        </div>
-        <div className={styles.content}>content</div>
-      </div>
-    </div>
-  );*/
+  const pageNav = '사용자 관리 > 사용자 정보 > 사용자 상세 정보';
 
   return (
     <div className={styles.container}>
-      <AdminFrame menuItems={menuItems} pageNav="사용자 관리 > 사용자 정보 > 사용자 상세 정보" />
+      <AdminFrame menuItems={menuItems} pageNav={pageNav} />
     </div>
   );
 }

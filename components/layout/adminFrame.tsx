@@ -1,8 +1,6 @@
 import styles from '@/styles/adminFrame.module.css';
-import Logo from '../common/logo';
 import Sidebar from '../common/sidebar';
 import menuItems from '@/types/menuItems';
-import PageTitle from '../common/pageTitle';
 import Content from '../common/content';
 import GlobalMenu from '../common/globalMenu';
 
@@ -12,8 +10,14 @@ export default function AdminFrame({ menuItems, pageNav }: { menuItems: menuItem
       <div className={styles.globalMenu}>
         <GlobalMenu pageNav={pageNav} />
       </div>
-      <Sidebar menuItems={menuItems} />
-      <Content />
+      <div className={styles.subContainer}>
+        <div className={styles.leftMenu}>
+          <Sidebar menuItems={menuItems} />
+        </div>
+        <div className={styles.content}>
+          <Content />
+        </div>
+      </div>
     </div>
   );
 }

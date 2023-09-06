@@ -5,18 +5,47 @@
   flex-direction: row;
 }
 
+.container > div {
+  height: inherit;
+}
+
 .logo {
   width: 20%;
+  border-right: 1.5px solid #888888;
+  /*
   border: 1.5px solid #888888;
-  border-bottom: none;
+  */
 }
 
 .pageNav {
+  font-size: 20px;
+  font-weight: bold;
   flex-grow: 1;
   display: flex;
   align-items: center;
-  padding: 10px;
+  padding: 0;
 
+  /*
   border-top: 1.5px solid #888888;
   border-right: 1.5px solid #888888;
+  */
+}
+
+.profile {
+  width: 40px;
+  height: inherit;
+  padding: 0 0;
+  /*
+  border: 3px solid #aaaaaa;
+  */
+  border-radius: 100%;
+  margin-left: auto;
+  background-image: '@/public/profile.jpg';
+}
+
+.profile > img {
+  border-radius: 100%;
+  max-width: 100%;
+  height: 100%;
+  cursor: pointer;
 }

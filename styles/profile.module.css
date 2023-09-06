@@ -1,0 +1,17 @@
+.container {
+  width: inherit;
+  height: inherit;
+  /*
+  border: 3px solid #aaaaaa;
+  */
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+
+  background: transparent;
+  line-height: normal;
+}
+
+.container > img {
+  max-width: 100%;
+}

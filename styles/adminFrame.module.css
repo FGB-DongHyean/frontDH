@@ -1,15 +1,31 @@
 .container {
   width: 100vw;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
   padding: 0;
+}
+
+.container > div > * {
+  border: 1.5px solid #888888;
 }
 
 .globalMenu {
   height: 10%;
 }
 
+.subContainer {
+  flex-grow: 1;
+  display: flex;
+}
+
 .leftMenu {
+  width: 20%;
 }
 
 .content {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1.5px solid #888888;
+  border-left: none;
 }
