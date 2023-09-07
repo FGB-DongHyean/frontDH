@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import SelectBox from '../search/SelectBox';
 import SearchInputBtn from '../search/SearchInputBtn';
 import { NextPage } from 'next';
-import styles from '@/styles/searchBar.module.css';
+import styles from '@/styles/searchBar.module.scss';
 
 const SearchBar: NextPage = () => {
   const [selectedDataOption, setSelectedDataOption] = useState('전체');

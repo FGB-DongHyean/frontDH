@@ -1,6 +1,6 @@
 import { NextPage } from 'next';
 import { SelectBoxProps } from '@/types/searchItems';
-import styles from '@/styles/searchBar.module.css';
+import styles from '@/styles/searchBar.module.scss';
 
 const SelectBox: NextPage<SelectBoxProps> = ({ setSelectedDataOption, setSelectedWordOption }) => {
   const DATA_OPTIONS = [
