@@ -1,51 +1,36 @@
 .container {
-  width: 100%;
+  width: calc(100% - 4px);
   height: 100%;
   display: flex;
   flex-direction: row;
 }
 
-.container > div {
-  height: inherit;
+.logo {
+  /* - padding, border */
+  width: calc(230px - 10px);
+  height: calc(100% - 10px);
+  border-right: 2px solid #888888;
+  padding: 5px;
 }
 
-.logo {
-  width: 20%;
-  border-right: 1.5px solid #888888;
-  /*
-  border: 1.5px solid #888888;
-  */
+.pageTitle {
+  flex-grow: 1;
+  height: 100%;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
 }
 
 .pageNav {
-  font-size: 20px;
-  font-weight: bold;
-  flex-grow: 1;
   display: flex;
   align-items: center;
-  padding: 0;
-
-  /*
-  border-top: 1.5px solid #888888;
-  border-right: 1.5px solid #888888;
-  */
 }
 
 .profile {
-  width: 40px;
-  height: inherit;
-  padding: 0 0;
-  /*
-  border: 3px solid #aaaaaa;
-  */
-  border-radius: 100%;
-  margin-left: auto;
-  background-image: '@/public/profile.jpg';
-}
-
-.profile > img {
-  border-radius: 100%;
-  max-width: 100%;
+  display: flex;
+  align-items: center;
+  width: 60px;
   height: 100%;
-  cursor: pointer;
+  margin-left: auto;
 }

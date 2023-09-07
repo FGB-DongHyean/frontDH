@@ -1,7 +1,6 @@
 import styles from '@/styles/test.module.css';
 import Sidebar from '@/components/common/sidebar';
 import menuItems from '@/types/menuItems';
-import logo from '@/public/logo.png';
 import AdminFrame from '@/components/layout/adminFrame';
 
 export default function Test() {
