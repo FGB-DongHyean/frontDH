@@ -1,7 +1,7 @@
 import { NextPage } from 'next';
 import { useState } from 'react';
 import { SearchInputBtnProps } from '@/types/searchItems';
-import styles from '@/styles/searchBar.module.css';
+import styles from '@/styles/searchBar.module.scss';
 
 const SearchInpuBtn: NextPage<SearchInputBtnProps> = ({ selectedDataOption, selectedWordOption }) => {
   const [isSearch, setIsSearch] = useState<string>('');
