@@ -5,9 +5,6 @@ import downArrow from '@/public/down.png';
 import { useState, useEffect } from 'react';
 import menuItems from '@/types/menuItems';
 
-// 수정사항
-// - 화살표 변경시 menuItems.dropActive 변화x -> menuItems 자체 정보값 변경 후 재렌더링하도록 수정 필요
-
 export default function Sidebar({ menuItems }: { menuItems: menuItems[] }) {
   function initArrow(dropActive: boolean) {
     return dropActive ? upArrow.src : downArrow.src;
@@ -20,7 +17,7 @@ export default function Sidebar({ menuItems }: { menuItems: menuItems[] }) {
           if (!menuItem.hasDrop) {
             const link = `/${menuItem.link}`;
             return (
-              <div>
+              <div className={styles.category}>
                 <Link href={link} className={styles.link}>
                   {menuItem.name}
                 </Link>
@@ -37,14 +34,17 @@ export default function Sidebar({ menuItems }: { menuItems: menuItems[] }) {
             return (
               <>
                 <div
+                  className={styles.category}
                   onClick={() => {
-                    console.log(`${dropActive} ${menuItem.dropActive}`);
+                    //console.log(`${dropActive} ${menuItem.dropActive}`);
                     setDropActive(!dropActive);
                     initArrow(dropActive);
                   }}
                 >
                   <span>{menuItem.name}</span>
-                  <img src={arrow} alt="arrow" className={styles.arrow} />
+                  <div className={styles.arrow}>
+                    <img src={arrow} alt="arrow" />
+                  </div>
                 </div>
                 {menuItem.subItems?.map((subItem) => {
                   const link = `/${subItem.link}`;

@@ -1,31 +1,41 @@
 .container {
-  width: 100vw;
+  width: calc(100% - 2px);
+  /* 수정 vh 사용시 schroll바 포함한 value -> schroll바 수치 제거 방법 찾기*/
   height: 100vh;
+  /*최소 유지 크기*/
+  min-width: 1000px;
+  min-height: 800px;
+
   display: flex;
   flex-direction: column;
   padding: 0;
-}
 
-.container > div > * {
-  border: 1.5px solid #888888;
+  position: relative;
+  top: 1px;
+  left: 1px;
 }
 
 .globalMenu {
-  height: 10%;
+  border: 2px solid #888888;
+  background-color: #f5f5f5;
+  height: 80px; /* min-height * 0.1 */
 }
 
 .subContainer {
+  border: 2px solid #888888;
+  border-top: none;
   flex-grow: 1;
   display: flex;
 }
 
 .leftMenu {
-  width: 20%;
+  background-color: #f5f5f5;
+  border-right: 2px solid #888888;
+  width: 230px; /* */
 }
 
 .content {
   flex-grow: 1;
   padding: 10px;
-  border: 1.5px solid #888888;
-  border-left: none;
+  background-color: #888888;
 }
