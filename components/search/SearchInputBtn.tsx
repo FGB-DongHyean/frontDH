@@ -1,7 +1,7 @@
 import { NextPage } from 'next';
 import { useState } from 'react';
 import { SearchInputBtnProps } from '@/types/searchItems';
-import styles from '@/styles/searchBar.module.scss';
+import { Button, Input, Space } from 'antd';
 
 const SearchInpuBtn: NextPage<SearchInputBtnProps> = ({ selectedDataOption, selectedWordOption }) => {
   const [isSearch, setIsSearch] = useState<string>('');
@@ -24,10 +24,10 @@ const SearchInpuBtn: NextPage<SearchInputBtnProps> = ({ selectedDataOption, sele
 
   return (
     <div>
-      <input className={styles.searchInput} onChange={searchInputHandler} value={isSearch} />
-      <button className={styles.button} onClick={searchButtonHandler}>
-        검색
-      </button>
+      <Space.Compact style={{ width: '80%' }}>
+        <Input onChange={searchInputHandler} />
+        <Button onClick={searchButtonHandler}>검색</Button>
+      </Space.Compact>
     </div>
   );
 };

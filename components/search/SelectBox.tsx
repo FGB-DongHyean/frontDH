@@ -1,8 +1,10 @@
 import { NextPage } from 'next';
 import { SelectBoxProps } from '@/types/searchItems';
-import styles from '@/styles/searchBar.module.scss';
+import { Select } from 'antd';
 
 const SelectBox: NextPage<SelectBoxProps> = ({ setSelectedDataOption, setSelectedWordOption }) => {
+  const { Option } = Select;
+
   const DATA_OPTIONS = [
     { key: 'all', label: '전체' },
     { key: 'id', label: '아이디' },
@@ -16,34 +18,30 @@ const SelectBox: NextPage<SelectBoxProps> = ({ setSelectedDataOption, setSelecte
     { key: 'same', label: '일치' },
   ];
 
-  const dataOptionHandler = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const { value } = e.target;
-
-    setSelectedDataOption(DATA_OPTIONS.filter((item) => item.key === value)[0].key);
+  const handleDataOptionChange = (option: string) => {
+    setSelectedDataOption(option);
   };
 
-  const wordOptionHandler = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const { value } = e.target;
-
-    setSelectedWordOption(WORD_OPTIONS.filter((item) => item.key === value)[0].key);
+  const handleWordOptionChange = (option: string) => {
+    setSelectedWordOption(option);
   };
 
   return (
     <div>
-      <select className={styles.dataBox} defaultValue="전체" onChange={dataOptionHandler}>
+      <Select defaultValue="전체" onChange={handleDataOptionChange}>
         {DATA_OPTIONS.map((item) => (
-          <option key={item.key} value={item.key}>
+          <Option key={item.label} value={item.label}>
             {item.label}
-          </option>
+          </Option>
         ))}
-      </select>
-      <select className={styles.wordBox} defaultValue="포함" onChange={wordOptionHandler}>
+      </Select>
+      <Select defaultValue="포함" onChange={handleWordOptionChange}>
         {WORD_OPTIONS.map((item) => (
-          <option key={item.key} value={item.key}>
+          <Option key={item.label} value={item.label}>
             {item.label}
-          </option>
+          </Option>
         ))}
-      </select>
+      </Select>
     </div>
   );
 };
